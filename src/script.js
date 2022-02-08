@@ -39,3 +39,59 @@ function fight(player1,player2,player1Health,player2Health) {
 }
 
 fight("Daryl","Jake",100,100);
+
+
+
+// Extended Challenges: getGrade
+const getGrade = (number) => {
+    let grade = "Your Grade";
+    if (number > 89 && number < 101) {
+        return grade = "is an 'A'!";
+    } else if (number > 79 && number < 90) {
+        return grade = "is 'B'!";
+    } else if (number > 69 && number < 80) {
+        return grade = "is 'C'.";
+    } else if (number > 59 && number < 70) {
+        return grade = "is 'D'.";
+    } else if (number > -1 && number < 60) {
+        return grade = "is 'F'.";
+    } else {
+        return grade = "can only be calculated if you enter a number between 0 and 100.";
+    }
+}
+console.log(`Your grade ${getGrade(20)}`);
+
+
+
+// Extended Challenges: prioritize
+const prioritize = (urgent,important) => {
+    let options = [
+        {option:1, urgent:true, important:true}, 
+        {option:2, urgent:false, important:true}, 
+        {option:3, urgent:true, important:false}, 
+        {option:4, urgent:false, important:false}
+    ];
+
+    for (let i=0 ; i < options.length ; i++) {
+        if (options[i].urgent === urgent && options[i].important === important) {
+            return options[i].option;
+        }
+    }
+}
+console.log(`The priority is ${prioritize(false,false)}.`);
+
+// Extended Challenges: calculatePay
+// Added some extra info / breakdown of pay to console
+const calculatePay = (wage,hours) => {
+    let basePay = (hours*wage);
+    let overtime = ((hours-40)*(wage*1.5) - ((hours-40)*wage));
+
+    if (hours <= 40) {
+        console.log(`Your weekly paycheck comes out to $${basePay} with no overtime.`);
+    } else {
+        console.log(`Your weekly paycheck comes out to $${basePay+overtime} with overtime included.`) 
+        console.log(`$${basePay} is your "base" pay and $${overtime} is your "overtime" pay.`)
+        console.log(`You net $${40*wage} from your first 40 hours of work and an additional $${(hours-40)*(wage*1.5)} in ${hours-40} hours of overtime.`);
+    }
+}
+calculatePay(20,80)
