@@ -37,9 +37,8 @@ function fight(player1,player2,player1Health,player2Health) {
         }
     }
 }
-
 fight("Daryl","Jake",100,100);
-
+console.log(">>>>>>>>>>>> Extended Challenges Below <<<<<<<<<<<<");
 
 
 // Extended Challenges: getGrade
@@ -59,6 +58,7 @@ const getGrade = (number) => {
         return grade = "can only be calculated if you enter a number between 0 and 100.";
     }
 }
+console.log("----getGrade Challenge----");
 console.log(`Your grade ${getGrade(20)}`);
 
 
@@ -78,6 +78,7 @@ const prioritize = (urgent,important) => {
         }
     }
 }
+console.log("----Prioritize Challenge----");
 console.log(`The priority is ${prioritize(false,false)}.`);
 
 // Extended Challenges: calculatePay
@@ -94,4 +95,5 @@ const calculatePay = (wage,hours) => {
         console.log(`You net $${40*wage} from your first 40 hours of work and an additional $${(hours-40)*(wage*1.5)} in ${hours-40} hours of overtime.`);
     }
 }
+console.log("----calculatePay Challenge----");
 calculatePay(20,80)
